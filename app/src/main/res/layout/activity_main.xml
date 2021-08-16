@@ -7,13 +7,12 @@
     android:background="@color/black"
     tools:context=".activites.main.MainActivity">
 
-
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch_sort"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="@dimen/four_dp"
+        android:layout_marginBottom="@dimen/four_dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,10 +21,10 @@
         android:id="@+id/text_view_popularity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/four_dp"
+        android:onClick="onClickSetPopularity"
         android:text="@string/text_popularity"
         android:textColor="@color/purple_200"
-        android:layout_marginEnd="4dp"
-        android:onClick="onClickSetPopularity"
         app:layout_constraintBottom_toBottomOf="@+id/switch_sort"
         app:layout_constraintEnd_toStartOf="@+id/switch_sort"
         app:layout_constraintTop_toTopOf="@+id/switch_sort" />
@@ -34,9 +33,9 @@
         android:id="@+id/text_view_top_rated"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/top_rated"
+        android:layout_marginStart="@dimen/four_dp"
         android:onClick="onClickSetTopRated"
-        android:layout_marginStart="4dp"
+        android:text="@string/top_rated"
         android:textColor="@color/grey_200"
         app:layout_constraintBottom_toBottomOf="@+id/switch_sort"
         app:layout_constraintStart_toEndOf="@+id/switch_sort"
@@ -44,8 +43,19 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_movies"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch_sort" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:outlineSpotShadowColor="@color/purple_200"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
