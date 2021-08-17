@@ -10,18 +10,19 @@
         <KeyFrameSet>
 
             <KeyAttribute
-                motion:motionTarget="@+id/image_view_big_poster"
+                android:alpha="0"
                 motion:framePosition="100"
-                android:alpha="0" />
+                motion:motionTarget="@+id/image_view_big_poster" />
 
             <KeyAttribute
-                motion:motionTarget="@+id/image_view_add_to_favorite"
+                android:alpha="0"
                 motion:framePosition="100"
-                android:alpha="0" />
+                motion:motionTarget="@+id/image_view_add_to_favorite" />
 
         </KeyFrameSet>
 
         <OnSwipe
+            motion:dragDirection="dragUp"
             motion:touchAnchorId="@+id/scroll_view_detail"
             motion:touchAnchorSide="top" />
 
@@ -32,22 +33,22 @@
     <ConstraintSet android:id="@+id/end">
 
         <Constraint
-            android:layout_height="@dimen/zero_dp"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="match_parent"
             android:id="@+id/image_view_big_poster"
-            motion:layout_constraintBottom_toTopOf="parent" />
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero_dp"
+            motion:layout_constraintBottom_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
 
         <Constraint
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
             android:id="@+id/image_view_add_to_favorite"
-            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sixteen_dp"
             android:layout_marginTop="@dimen/sixteen_dp"
-            motion:layout_editor_absoluteX="@dimen/tsht_dp"
             motion:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="@dimen/sixteen_dp" />
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_editor_absoluteX="@dimen/tsht_dp" />
 
     </ConstraintSet>
 

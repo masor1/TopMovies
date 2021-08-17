@@ -140,6 +140,7 @@
         android:layout_width="@dimen/zero_dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/eight_dp"
+        android:nestedScrollingEnabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
