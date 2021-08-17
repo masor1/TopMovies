@@ -67,7 +67,7 @@ public class JSONUtils {
         try {
             JSONArray jsonArray = jsonObject.getJSONArray(KEY_RESULTS);
             for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonObjectTrailers = jsonArray.getJSONObject(0);
+                JSONObject jsonObjectTrailers = jsonArray.getJSONObject(i);
                 String key = BASE_YOUTUBE_URL + jsonObjectTrailers.getString(KEY_KEY_OF_VIDEO);
                 String name = jsonObjectTrailers.getString(KEY_NAME);
                 Trailer trailer = new Trailer(key, name);
