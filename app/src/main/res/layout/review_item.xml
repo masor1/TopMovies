@@ -9,15 +9,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/grey_500"
-        android:padding="@dimen/eight_dp">
+        android:background="@color/grey_500">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_view_author"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/eight_dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero_dp"
+            android:background="@color/purple_500"
+            android:padding="@dimen/eight_dp"
+            android:textAlignment="textStart"
             android:textColor="@color/purple_200"
+            android:textSize="@dimen/sixteen_dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,6 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/eight_dp"
+            android:padding="@dimen/four_dp"
             android:textColor="@color/grey_200"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

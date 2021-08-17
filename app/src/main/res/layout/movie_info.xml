@@ -6,12 +6,8 @@
 
     <TextView
         android:id="@+id/text_view_label_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/eight_dp"
-        android:layout_marginTop="@dimen/eight_dp"
+        style="@style/LabelStyle"
         android:text="@string/label_title"
-        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,12 +32,8 @@
 
     <TextView
         android:id="@+id/text_view_label_original_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/eight_dp"
-        android:layout_marginTop="@dimen/eight_dp"
+        style="@style/LabelStyle"
         android:text="@string/original_name"
-        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_view_title" />
 
@@ -59,12 +51,8 @@
 
     <TextView
         android:id="@+id/text_view_label_rating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/eight_dp"
-        android:layout_marginTop="@dimen/eight_dp"
+        style="@style/LabelStyle"
         android:text="@string/rating"
-        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_view_original_title" />
 
@@ -82,12 +70,8 @@
 
     <TextView
         android:id="@+id/text_view_label_release_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/eight_dp"
-        android:layout_marginTop="@dimen/eight_dp"
+        style="@style/LabelStyle"
         android:text="@string/release_date"
-        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_view_rating" />
 
@@ -105,12 +89,8 @@
 
     <TextView
         android:id="@+id/text_view_label_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/eight_dp"
-        android:layout_marginTop="@dimen/eight_dp"
+        style="@style/LabelStyle"
         android:text="@string/description"
-        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_view_release_date" />
 
