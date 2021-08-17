@@ -5,4 +5,5 @@
     <dimen name="sixteen_dp">16dp</dimen>
     <dimen name="four_dp">4dp</dimen>
     <dimen name="sixty_dp">60dp</dimen>
+    <dimen name="tsht_dp">363dp</dimen>
 </resources>

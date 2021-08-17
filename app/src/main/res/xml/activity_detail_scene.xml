@@ -6,48 +6,49 @@
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
         motion:duration="1000">
+
         <KeyFrameSet>
+
             <KeyAttribute
-                android:alpha="0"
+                motion:motionTarget="@+id/image_view_big_poster"
                 motion:framePosition="100"
-                motion:motionTarget="@+id/image_view_big_poster" />
+                android:alpha="0" />
+
             <KeyAttribute
-                android:alpha="0"
-                android:translationY="-10dp"
+                motion:motionTarget="@+id/image_view_add_to_favorite"
                 motion:framePosition="100"
-                motion:motionTarget="@+id/image_view_add_to_favorite" />
+                android:alpha="0" />
+
         </KeyFrameSet>
+
         <OnSwipe
-            motion:touchAnchorId="@id/image_view_big_poster"
-            motion:touchAnchorSide="bottom" />
+            motion:touchAnchorId="@+id/scroll_view_detail"
+            motion:touchAnchorSide="top" />
+
     </Transition>
 
-    <ConstraintSet android:id="@+id/start">
-        <Constraint
-            android:id="@+id/image_view_big_poster"
-            android:layout_width="@dimen/zero_dp"
-            android:layout_height="wrap_content"
-            motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toTopOf="parent" />
-    </ConstraintSet>
+    <ConstraintSet android:id="@+id/start"></ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
+
         <Constraint
-            android:id="@+id/image_view_big_poster"
-            android:layout_width="@dimen/zero_dp"
-            android:layout_height="1dp"
-            android:adjustViewBounds="true"
-            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_height="@dimen/zero_dp"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintEnd_toEndOf="parent"/>
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:id="@+id/image_view_big_poster"
+            motion:layout_constraintBottom_toTopOf="parent" />
+
         <Constraint
-            android:id="@+id/image_view_add_to_favorite"
+            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            motion:layout_constraintTop_toBottomOf="@id/image_view_big_poster"
-            motion:layout_constraintBottom_toBottomOf="@id/image_view_big_poster"
-            motion:layout_constraintStart_toStartOf="@id/image_view_big_poster"
-            motion:layout_constraintEnd_toEndOf="@id/image_view_big_poster"/>
+            android:id="@+id/image_view_add_to_favorite"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/sixteen_dp"
+            motion:layout_editor_absoluteX="@dimen/tsht_dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/sixteen_dp" />
+
     </ConstraintSet>
+
 </MotionScene>

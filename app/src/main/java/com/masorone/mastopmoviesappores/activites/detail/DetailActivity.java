@@ -10,7 +10,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -35,8 +34,6 @@ import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
 
-import java.net.URL;
-import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -113,29 +110,37 @@ public class DetailActivity extends AppCompatActivity {
         } else {
             finish();
         }
+
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         movie = viewModel.getMovieById(id);
-        Picasso.get().load(movie.getBigPosterPath()).into(binding.imageViewBigPoster);
+
+        Picasso.get().load(movie.getBigPosterPath()).placeholder(android.R.drawable.ic_menu_camera).into(binding.imageViewBigPoster);
+
         textViewTitle.setText(movie.getTitle());
         textViewOriginalTitle.setText(movie.getOriginalTitle());
         textViewOverview.setText(movie.getOverview());
         textViewReleaseDate.setText(movie.getReleaseDate());
         textViewRating.setText(Double.toString(movie.getVoteAverage()));
+
         setFavourite();
+
         trailerAdapter = new TrailerAdapter();
         trailerAdapter.setOnTrailerClickListener(url -> {
             Intent intentToTrailer = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             startActivity(intentToTrailer);
         });
+
         reviewAdapter = new ReviewAdapter();
         recyclerViewTrailers.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewReviews.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewTrailers.setAdapter(trailerAdapter);
         recyclerViewReviews.setAdapter(reviewAdapter);
+
         JSONObject jsonObjectTrailers = NetworkUtils.getJSONForVideos(movie.getId(), lang);
         JSONObject jsonObjectReviews = NetworkUtils.getJSONForReviews(movie.getId(), lang);
         ArrayList<Trailer> trailers = JSONUtils.getTrailerFromJSON(jsonObjectTrailers);
         ArrayList<Review> reviews = JSONUtils.getReviewsFromJSON(jsonObjectReviews);
+
         reviewAdapter.setReviews(reviews);
         trailerAdapter.setTrailers(trailers);
     }

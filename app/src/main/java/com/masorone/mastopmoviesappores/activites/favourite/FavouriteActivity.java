@@ -3,7 +3,6 @@ package com.masorone.mastopmoviesappores.activites.favourite;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 
@@ -66,6 +65,7 @@ public class FavouriteActivity extends AppCompatActivity {
         binding.recyclerViewFavouriteMovies.setHasFixedSize(true);
         adapter = new MovieAdapter();
         binding.recyclerViewFavouriteMovies.setAdapter(adapter);
+
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         LiveData<List<FavouriteMovie>> favouriteMovies = viewModel.getFavouriteMovies();
         favouriteMovies.observe(this, favouriteMovies1 -> {
@@ -74,6 +74,7 @@ public class FavouriteActivity extends AppCompatActivity {
                 adapter.setMovies(movies);
             }
         });
+
         adapter.setOnPosterClickListener(position -> {
             Movie movie = adapter.getMovies().get(position);
             Intent intent = new Intent(FavouriteActivity.this, DetailActivity.class);

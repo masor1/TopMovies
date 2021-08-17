@@ -1,6 +1,5 @@
 package com.masorone.mastopmoviesappores.utils;
 
-import android.util.Log;
 
 import com.masorone.mastopmoviesappores.data.Movie;
 import com.masorone.mastopmoviesappores.data.Review;

@@ -8,15 +8,15 @@
     app:layoutDescription="@xml/activity_detail_scene"
     tools:context=".activites.detail.DetailActivity">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image_view_big_poster"
-                android:layout_width="@dimen/zero_dp"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_view_big_poster"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero_dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/image_view_add_to_favorite"
@@ -27,26 +27,23 @@
         app:layout_constraintBottom_toBottomOf="@+id/image_view_big_poster"
         app:layout_constraintEnd_toEndOf="@+id/image_view_big_poster"
         app:layout_constraintTop_toBottomOf="@+id/image_view_big_poster"
-        app:srcCompat="@android:drawable/btn_star_big_off"
-        tools:ignore="UsingOnClickInXml" />
+        app:srcCompat="@android:drawable/btn_star_big_off" />
 
-            <ScrollView
-                android:id="@+id/scrollView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/image_view_big_poster"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_add_to_favorite">
+    <ScrollView
+        android:id="@+id/scroll_view_detail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero_dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_add_to_favorite">
 
-                <include
-                    android:id="@+id/movie_info"
-                    layout="@layout/movie_info"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/zero_dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/image_view_add_to_favorite" />
+        <include
+            android:id="@+id/movie_info"
+            layout="@layout/movie_info"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero_dp" />
 
-            </ScrollView>
+    </ScrollView>
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

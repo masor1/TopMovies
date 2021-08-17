@@ -30,9 +30,7 @@ public class MainViewModel extends AndroidViewModel {
     public Movie getMovieById(int id) {
         try {
             return new GetMovieTask().execute(id).get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
         return null;
@@ -41,9 +39,7 @@ public class MainViewModel extends AndroidViewModel {
     public FavouriteMovie getFavouriteMovieById(int id) {
         try {
             return new GetFavouriteMovieTask().execute(id).get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
         return null;
