@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#A76FEC</color>
-    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_500">#6D12EF</color>
+    <color name="name_author_label_area">#3D2C57</color>
+    <color name="name_author_text">#B08CE3</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
